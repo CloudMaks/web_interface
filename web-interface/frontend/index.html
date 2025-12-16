@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебный полигон ИБ | Главная</title>
+    <link rel="stylesheet" href="styles-dark.css">
+    <!-- Подключение иконок (например, Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>Учебный Полигон ИБ</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#about" class="nav-link">О проекте</a></li>
+                    <li><a href="#features" class="nav-link">Возможности</a></li>
+                    <li><a href="#scenarios" class="nav-link">Сценарии</a></li>
+                    <li><a href="login.html" class="btn btn-outline">Войти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        <!-- Герой-секция -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Практика информационной безопасности в реальной среде</h1>
+                    <p>Отрабатывайте навыки кибербезопасности на изолированном полигоне с реалистичными сценариями инцидентов. Без риска для реальных систем.</p>
+                    <div class="hero-buttons">
+                        <a href="login.html" class="btn btn-primary">Начать сейчас</a>
+                        <a href="#about" class="btn btn-secondary">Узнать больше</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- Можно вставить схему полигона или иконку -->
+                    <i class="fas fa-server"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция "О проекте" -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2>О проекте</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Учебный проект</h3>
+                        <p>Данный веб-интерфейс разработан в рамках выпускной квалификационной работы по специальности 10.05.02 «Информационная безопасность телекоммуникационных систем».</p>
+                    </div>
+                    <div class="about-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Цель</h3>
+                        <p>Создание удобной и функциональной платформы для анализа и обработки инцидентов информационной безопасности, предназначенной для студентов и преподавателей.</p>
+                    </div>
+                    <div class="about-card">
+                        <i class="fas fa-cube"></i>
+                        <h3>Технологии</h3>
+                        <p>Полигон построен на основе виртуальных машин (VirtualBox) и контейнеров (Docker). Интерфейс использует современные веб-технологии: HTML5, CSS3, JavaScript и Python (Backend).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция "Возможности" -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Ключевые возможности</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-lock"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Разграничение прав доступа</h3>
+                            <p>Разделение на роли: Студент, Преподаватель и Администратор с различным уровнем доступа к функционалу.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Система заданий и сценариев</h3>
+                            <p>Доступ к библиотеке лабораторных работ и сценариев инцидентов ИБ для отработки практических навыков.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-check-double"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Автоматическая проверка</h3>
+                            <p>Система автоматически проверяет корректность выполнения заданий и отслеживает прогресс студентов.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Изолированная среда</h3>
+                            <p>Все эксперименты проводятся в безопасной, изолированной среде на базе виртуальных машин, не затрагивая основную инфраструктуру.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция "Сценарии" -->
+        <section id="scenarios" class="scenarios">
+            <div class="container">
+                <h2>Примеры сценариев инцидентов</h2>
+                <div class="scenarios-grid">
+                    <div class="scenario-card">
+                        <h3>Компрометация веб-приложений</h3>
+                        <ul>
+                            <li>SQL-инъекции</li>
+                            <li>Межсайтовый скриптинг (XSS)</li>
+                            <li>Подбор учетных данных (Brute Force)</li>
+                        </ul>
+                    </div>
+                    <div class="scenario-card">
+                        <h3>Несанкционированный доступ (НСД)</h3>
+                        <ul>
+                            <li>Анализ сетевого трафика</li>
+                            <li>Эскалация привилегий</li>
+                            <li>Обход механизмов аутентификации</li>
+                        </ul>
+                    </div>
+                    <div class="scenario-card">
+                        <h3>Вредоносное ПО</h3>
+                        <ul>
+                            <li>Анализ поведения малвари</li>
+                            <li>Расследование инцидентов</li>
+                            <li>Методы обнаружения и противодействия</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Призыв к действию -->
+        <section class="cta">
+            <div class="container">
+                <h2>Готовы начать обучение?</h2>
+                <p>Присоединяйтесь к учебному полигону и оттачивайте свои навыки в области кибербезопасности.</p>
+                <a href="login.html" class="btn btn-primary btn-large">Войти в систему</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Учебный полигон информационной безопасности. ВКР по специальности 10.05.02.</p>
+        </div>
+    </footer>
+
+	<script src="api.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>

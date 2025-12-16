@@ -1,0 +1,413 @@
+/* Стили для личного кабинета */
+.dashboard {
+    padding-top: 0;
+}
+
+/* Приветственная секция */
+.welcome-section {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.welcome-content h1 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+}
+
+.welcome-content p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-info h3 {
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
+}
+
+.stat-info p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Секция лабораторных */
+.labs-section {
+    padding: 4rem 0;
+}
+
+.labs-filter {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--accent-primary);
+    color: white;
+    border-color: var(--accent-primary);
+}
+
+.labs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.lab-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+.lab-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-primary);
+}
+
+.lab-card.completed::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #22c55e;
+    border-radius: 12px 12px 0 0;
+}
+
+.lab-card.pending::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #eab308;
+    border-radius: 12px 12px 0 0;
+}
+
+.lab-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.lab-title {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.lab-status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.status-completed {
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.status-pending {
+    background: rgba(234, 179, 8, 0.1);
+    color: #eab308;
+    border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.status-not-started {
+    background: rgba(100, 116, 139, 0.1);
+    color: #64748b;
+    border: 1px solid rgba(100, 116, 139, 0.3);
+}
+
+.lab-description {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.lab-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.lab-difficulty {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.difficulty-easy { color: #22c55e; }
+.difficulty-medium { color: #eab308; }
+.difficulty-hard { color: #ef4444; }
+
+/* Секция прогресса */
+.progress-section {
+    background: var(--bg-secondary);
+    padding: 4rem 0;
+}
+
+.progress-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.progress-chart {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.progress-details h3 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.progress-list {
+    list-style: none;
+    padding: 0;
+}
+
+.progress-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.progress-list li:last-child {
+    border-bottom: none;
+}
+
+.progress-label {
+    color: var(--text-secondary);
+}
+
+.progress-value {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: var(--bg-card);
+    margin: 2% auto;
+    padding: 0;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h2 {
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.close {
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: var(--text-primary);
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-body h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.modal-body p, .modal-body ol {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.modal-body ol {
+    padding-left: 1.5rem;
+}
+
+.modal-body li {
+    margin-bottom: 0.5rem;
+}
+
+.lab-submission {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+#labAnswer {
+    width: 100%;
+    height: 120px;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    resize: vertical;
+    margin-bottom: 1rem;
+}
+
+#labAnswer:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+}
+
+/* Выпадающее меню пользователя */
+.user-menu {
+    position: relative;
+    cursor: pointer;
+}
+
+.user-menu span {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.5rem;
+    min-width: 150px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-menu:hover .dropdown {
+    display: block;
+}
+
+.dropdown a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.dropdown a:hover {
+    color: var(--accent-primary);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .stats-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .progress-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .labs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+    }
+    
+    .lab-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

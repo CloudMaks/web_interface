@@ -1,0 +1,38 @@
+<!-- frontend/debug.html -->
+<!DOCTYPE html>
+<html>
+<head><title>Debug API</title></head>
+<body>
+    <h1>Debug API Tests</h1>
+    <button onclick="testAll()">Test All APIs</button>
+    <div id="results"></div>
+    
+    <script>
+        async function testAll() {
+            const results = document.getElementById('results');
+            results.innerHTML = 'Testing...';
+            
+            try {
+                // Test 1: Basic API
+                const labs = await fetch('/api/labs').then(r => r.json());
+                results.innerHTML += `<br>✅ Labs API: ${labs.success} (${labs.labs?.length} labs)`;
+                
+                // Test 2: Teacher API
+                const students = await fetch('/api/teacher/students').then(r => r.json());
+                results.innerHTML += `<br>✅ Students API: ${students.success} (${students.students?.length} students)`;
+                
+                // Test 3: Debug API
+                const debug = await fetch('/api/debug/labs').then(r => r.json());
+                results.innerHTML += `<br>✅ Debug Labs API: ${debug.success} (${debug.count} labs in DB)`;
+                
+                // Test 4: DB Check
+                const db = await fetch('/api/debug/db').then(r => r.json());
+                results.innerHTML += `<br>✅ DB Check: ${db.success} (Users: ${db.database?.users}, Labs: ${db.database?.labs})`;
+                
+            } catch (error) {
+                results.innerHTML += `<br>❌ Error: ${error}`;
+            }
+        }
+    </script>
+</body>
+</html>
