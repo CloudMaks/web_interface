@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практическая работа | Учебный Полигон инцедентов ИБ</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="lab-workspace.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="container">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Учебный Полигон инцедентов ИБ</span>
+                </div>
+                <nav class="dashboard-nav">
+                    <ul>
+                        <li><a href="student-dashboard.html">В личный кабинет</a></li>
+                        <li id="timerContainer">
+                            <i class="fas fa-clock"></i>
+                            <span id="timer">00:00:00</span>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                <!-- Заголовок практической работы -->
+                <div class="lab-header-section">
+                    <h1 id="labTitle">Практическая работа</h1>
+                    <div class="lab-meta-info">
+                        <span id="labNumber"></span>
+                        <span id="labDifficulty"></span>
+                    </div>
+                </div>
+
+                <!-- Задания -->
+                <div class="tasks-container" id="tasksContainer">
+                    <!-- Задания будут загружены через JS -->
+                </div>
+
+                <!-- Кнопка завершения -->
+                <div class="completion-section">
+                    <button class="btn btn-primary btn-large" id="completeBtn" disabled>
+                        Завершить работу
+                    </button>
+                    <p class="completion-note">
+                        * Работу можно завершить только после выполнения всех заданий
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+	
+    <script src="auth.js"></script>
+    <script src="lab-workspace.js"></script>
+</body>
+</html>

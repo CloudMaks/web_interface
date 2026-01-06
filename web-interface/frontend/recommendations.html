@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рекомендации по использованию | Учебный Полигон инцедентов ИБ</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="container">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Учебный Полигон инцедентов ИБ</span>
+                </div>
+                <nav class="dashboard-nav">
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                <!-- Заголовок страницы -->
+                <div class="lab-header-section" style="margin-top: 2rem;">
+                    <h1><i class="fas fa-book"></i> Рекомендации по использованию учебного полигона</h1>
+                    <p class="lab-meta-info" style="margin-top: 1rem; color: var(--text-secondary);">
+                        Практические рекомендации для преподавателей и студентов
+                    </p>
+                </div>
+
+                <!-- Введение -->
+                <section class="theory-section" style="margin-top: 2rem;">
+                    <h2>Введение</h2>
+                    <p>Данный учебный полигон создан для практического освоения навыков обработки инцидентов информационной безопасности. Платформа предоставляет интерактивную среду для отработки реальных сценариев ИБ в безопасных условиях.</p>
+                    
+                    <div class="info-message" style="margin: 1.5rem 0;">
+                        <i class="fas fa-lightbulb"></i>
+                        <strong>Цель платформы:</strong> Сформировать у студентов практические навыки обнаружения, анализа и устранения инцидентов информационной безопасности.
+                    </div>
+                </section>
+                <!-- Для студентов -->
+                <section id="students" class="theory-section" style="margin-top: 2rem;">
+                    <h2><i class="fas fa-user-graduate"></i> Для студентов</h2>
+                    
+                    <div class="theory-step">
+                        <h3>1. Начало работы</h3>
+                        <p>Для доступа к платформе используйте демо-аккаунт или учетные данные, предоставленные преподавателем:</p>
+                        <div class="code-block">
+                            Логин: student<br>
+                            Пароль: student123
+                        </div>
+                    </div>
+                    
+                    <div class="theory-step">
+                        <h3>2. Структура практических работ</h3>
+                        
+                        <h4>2.1. Подготовительный этап</h4>
+                        <ul>
+                            <li><strong>Цель:</strong> Настройка системы мониторинга и уведомлений</li>
+                            <li><strong>Продолжительность:</strong> 30-40 минут</li>
+                            <li><strong>Особенности:</strong> Не оценивается баллами, но обязателен для выполнения</li>
+                        </ul>
+                        
+                        <h4>2.2. Практическая работа №1</h4>
+                        <ul>
+                            <li><strong>Тема:</strong> Обработка инцидента несоответствующего использования ресурсов</li>
+                            <li><strong>Максимальный балл:</strong> 30 баллов</li>
+                            <li><strong>Количество заданий:</strong> 3 тестовых вопроса</li>
+                            <li><strong>Ключевые навыки:</strong> Анализ загрузки системы, работа с процессами, управление ПО</li>
+                        </ul>
+                        
+                        <h4>2.3. Практическая работа №2</h4>
+                        <ul>
+                            <li><strong>Тема:</strong> Обработка инцидента несанкционированного доступа</li>
+                            <li><strong>Максимальный балл:</strong> 30 баллов</li>
+                            <li><strong>Количество заданий:</strong> 2 тестовых вопроса + 1 вопрос с вводом ответа</li>
+                            <li><strong>Ключевые навыки:</strong> Анализ журналов аутификации, настройка PAM, управление паролями</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theory-step">
+                        <h3>3. Рекомендации по выполнению</h3>
+                        
+                        <h4>3.1. Подготовка к работе</h4>
+                        <ul>
+                            <li>Изучите теоретический материал перед началом практической работы</li>
+                            <li>Убедитесь, что у вас есть доступ к виртуальной машине Kali Linux</li>
+                            <li>Подготовьте блокнот для записи команд и наблюдений</li>
+                        </ul>
+                        
+                        <h4>3.2. Выполнение заданий</h4>
+                        <ul>
+                            <li>Внимательно читайте условия каждого задания</li>
+                            <li>Следуйте пошаговым инструкциям в теоретической части</li>
+                            <li>Используйте команды, приведенные в примерах</li>
+                            <li>Проверяйте результаты выполнения команд</li>
+                        </ul>
+                        
+                        <h4>3.3. Работа с тестовыми заданиями</h4>
+                        <ul>
+                            <li>Внимательно читайте вопрос и все варианты ответов</li>
+                            <li>Помните: за каждую лишнюю попытку снимается 1 балл</li>
+                            <li>Максимальное количество попыток на задание - 10</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theory-step">
+                        <h3>4. Технические требования</h3>
+                        
+                        <h4>4.1. Оборудование</h4>
+                        <ul>
+                            <li>Компьютер с доступом в интернет</li>
+                            <li>Браузер: Chrome, Firefox, Edge или Safari последней версии</li>
+                            <li>Разрешение экрана не менее 1280x720</li>
+                        </ul>
+                        
+                        <h4>4.2. Программное обеспечение</h4>
+                        <ul>
+                            <li>Виртуальная машина с Kali Linux (предоставляется преподавателем)</li>
+                            <li>Доступ к терминалу Linux</li>
+                            <li>Электронная почта для получения уведомлений (для подготовительного этапа)</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Кнопка возврата -->
+                <div class="completion-section" style="margin-top: 3rem;">
+                    <a href="index.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-home"></i> Вернуться на главную
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2026 Учебный киберполигон. ВКР по специальности 10.05.02.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">
+                    Рекомендации по использованию учебного полигона
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+[file content end]

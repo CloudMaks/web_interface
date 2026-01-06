@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет студента | Учебный Полигон инцедентов ИБ</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="container">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Учебный Полигон инцедентов ИБ</span>
+                </div>
+                <nav class="dashboard-nav">
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="#labs">Практические работы</a></li>
+                        <li><a href="#progress">Прогресс</a></li>
+                        <li class="user-menu">
+                            <span id="userName">Студент</span>
+                            <i class="fas fa-chevron-down"></i>
+                            <div class="user-dropdown">
+                                <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Выйти</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- Приветственная секция -->
+            <section class="welcome-section">
+                <div class="container">
+                    <div class="welcome-content">
+                        <h1>Добро пожаловать, <span id="studentName">Студент</span>!</h1>
+                        <p id="studentGroup">Группа: Загрузка...</p>
+                        
+                        <div class="stats-grid" id="statsContainer">
+                            <!-- Статистика будет загружена через JS -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Практические работы -->
+            <section id="labs" class="dashboard-section">
+                <div class="container">
+                    <h2>Практические работы</h2>
+                    <div class="labs-grid" id="labsContainer">
+                        <!-- Практические будут загружены через JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Прогресс -->
+            <section id="progress" class="dashboard-section">
+                <div class="container">
+                    <h2>Мой прогресс</h2>
+                    <div class="progress-grid">
+                        <div class="progress-stats">
+                            <ul class="progress-list" id="progressStats">
+                                <!-- Статистика прогресса -->
+                            </ul>
+                        </div>
+                        <div class="progress-chart">
+                            <canvas id="progressChart" width="400" height="300"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Модальное окно результатов -->
+    <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Результаты выполнения работы</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="result-info">
+                    <div class="result-item">
+                        <label>Баллы:</label>
+                        <span id="modalScore">0</span>
+                    </div>
+                    <div class="result-item">
+                        <label>Количество ошибок:</label>
+                        <span id="modalErrors">0</span>
+                    </div>
+                    <div class="result-item">
+                        <label>Дата начала:</label>
+                        <span id="modalStartTime">-</span>
+                    </div>
+                    <div class="result-item">
+                        <label>Дата завершения:</label>
+                        <span id="modalEndTime">-</span>
+                    </div>
+                    <div class="result-item">
+                        <label>Время выполнения:</label>
+                        <span id="modalTotalTime">-</span>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-primary" id="modalOkBtn">ОК</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключение Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="auth.js"></script>
+    <script src="student-dashboard.js"></script>
+</body>
+</html>

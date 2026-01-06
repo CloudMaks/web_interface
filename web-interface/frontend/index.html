@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебный Полигон инцедентов ИБ | Главная</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>Учебный Полигон инцедентов ИБ</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#about" class="nav-link">О проекте</a></li>
+					<li><a href="recommendations.html" class="nav-link">Рекомендации</a></li>
+                    <li><a href="#features" class="nav-link">Возможности</a></li>
+                    <li><a href="#labs" class="nav-link">Практические работы</a></li>
+                    <li><a href="login.html" class="btn btn-outline">Войти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Практика информационной безопасности в реальной среде</h1>
+                    <p>Отрабатывайте навыки кибербезопасности на изолированном полигоне с реалистичными сценариями инцидентов.</p>
+                    <div class="hero-buttons">
+                        <a href="login.html" class="btn btn-primary" id="heroStartBtn">Начать сейчас</a>
+                        <a href="#about" class="btn btn-secondary">Узнать больше</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <i class="fas fa-server"></i>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>О проекте</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Учебный проект</h3>
+                        <p>Веб-интерфейс для учебного киберполигона в рамках выпускной квалификационной работы по специальности 10.05.02.</p>
+                    </div>
+                    <div class="about-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Цель</h3>
+                        <p>Создание платформы для анализа и обработки инцидентов информационной безопасности для студентов и преподавателей.</p>
+                    </div>
+                    <div class="about-card">
+                        <i class="fas fa-cube"></i>
+                        <h3>Технологии</h3>
+                        <p>Современные веб-технологии: HTML5, CSS3, JavaScript и Python Flask на бэкенде. База данных - SQLite.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Ключевые возможности</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-lock"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Разграничение прав доступа</h3>
+                            <p>Разделение на роли: Студент и Преподаватель с различным уровнем доступа к функционалу.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Система заданий</h3>
+                            <p>Практические работы с пошаговым выполнением заданий и автоматической проверкой.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Мониторинг прогресса</h3>
+                            <p>Детальная статистика выполнения работ для студентов и преподавателей.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="labs" class="labs">
+            <div class="container">
+                <h2>Практические работы</h2>
+                <div class="labs-grid">
+                    <div class="lab-card">
+                        <h3>Подготовительный этап</h3>
+                        <p>Настройка системы мониторинга и уведомлений</p>
+                        <div class="lab-difficulty easy">Легкая</div>
+                    </div>
+                    <div class="lab-card">
+                        <h3>Практическая работа №1</h3>
+                        <p>Обработка инцидента с несоответствующим использованием ресурсов</p>
+                        <div class="lab-difficulty medium">Средняя</div>
+                    </div>
+                    <div class="lab-card">
+                        <h3>Практическая работа №2</h3>
+                        <p>Обработка инцидента с несанкционированным доступом</p>
+                        <div class="lab-difficulty medium">Средняя</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Готовы начать обучение?</h2>
+                <p>Присоединяйтесь к учебному полигону и оттачивайте свои навыки в области кибербезопасности.</p>
+                <a href="login.html" class="btn btn-primary btn-large" id="ctaLoginBtn">Войти в систему</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Учебный киберполигон. ВКР по специальности 10.05.02.</p>
+        </div>
+    </footer>
+	
+    <script src="script.js"></script>
+</body>
+</html>
