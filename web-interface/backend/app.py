@@ -1108,6 +1108,36 @@ def index():
 def serve_static(path):
     return send_from_directory(app.static_folder, path)
 
+# API для скачивания файлов
+@app.route('/api/download/<filename>')
+def download_file(filename):
+    try:
+        # Проверяем авторизацию
+        if 'user_id' not in session:
+            return jsonify({'success': False, 'error': 'Требуется авторизация'}), 401
+        
+        # Безопасный путь к файлу
+        safe_path = os.path.join(app.static_folder, 'downloads', filename)
+        
+        # Проверяем существование файла
+        if not os.path.exists(safe_path):
+            return jsonify({'success': False, 'error': 'Файл не найден'}), 404
+        
+        # Проверяем, что файл имеет разрешенное расширение
+        allowed_extensions = ['.ova', '.pdf', '.txt', '.doc', '.docx', '.zip']
+        if not any(filename.lower().endswith(ext) for ext in allowed_extensions):
+            return jsonify({'success': False, 'error': 'Недопустимый тип файла'}), 400
+        
+        return send_from_directory(
+            os.path.join(app.static_folder, 'downloads'),
+            filename,
+            as_attachment=True,
+            download_name=filename
+        )
+        
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
