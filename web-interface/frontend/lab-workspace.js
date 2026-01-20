@@ -282,7 +282,7 @@ function renderTasks() {
     const isCompleted = currentLab.status === 'completed';
     
     if (isPreparation) {
-        // Подготовительный этап - с новым содержанием
+        // Подготовительный этап - с новым содержанием и кнопкой скачивания
         container.innerHTML = `
             <div class="task">
                 <div class="task-header">
@@ -358,6 +358,20 @@ function renderTasks() {
                                 ALERT_EMAIL=ваш_email@mail.ru
                             </div>
                             <p>Сохранить и закрыть файл.</p>
+                        </div>
+                        
+                        <!-- Кнопка для скачивания файла -->
+                        <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(34, 197, 94, 0.1); border-radius: 8px; border: 1px solid rgba(34, 197, 94, 0.3); text-align: center;">
+                            <h4 style="color: var(--success); margin-bottom: 1rem;">
+                                <i class="fas fa-download"></i> Образ виртуальной машины
+                            </h4>
+                            
+                            <button class="btn btn-success" onclick="downloadMaterial()" style="padding: 0.75rem 2rem;">
+                                <i class="fas fa-file-download"></i> Скачать "Учебный полигон инцидентов ИБ"
+                            </button>
+                            <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                                <i class="fas fa-info-circle"></i> Файл будет загружен в формате OVA
+                            </p>
                         </div>
                         
                         <div style="margin-top: 2rem; padding: 1rem; background: rgba(59, 130, 246, 0.1); border-radius: 8px; border: 1px solid rgba(59, 130, 246, 0.3);">
@@ -570,6 +584,61 @@ function renderTasks() {
         
         // Обновляем кнопку завершения
         updateCompleteButton();
+    }
+}
+
+async function downloadMaterial() {
+    try {
+        const filename = 'Учебный_полигон_инцидентов_ИБ.ova';
+        
+        showNotification('Начинается скачивание файла...', 'info');
+        
+        // Создаем ссылку для скачивания
+        const downloadUrl = `/api/download/${encodeURIComponent(filename)}`;
+        
+        // Создаем временную ссылку и кликаем по ней
+        const link = document.createElement('a');
+        link.href = downloadUrl;
+        link.download = filename;
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // Альтернативный вариант с fetch для проверки статуса
+        try {
+            const response = await fetch(downloadUrl, {
+                credentials: 'include'
+            });
+            
+            if (response.ok) {
+                showNotification('Файл начал скачиваться', 'success');
+                
+                // Скачиваем файл через blob
+                const blob = await response.blob();
+                const blobUrl = window.URL.createObjectURL(blob);
+                const link2 = document.createElement('a');
+                link2.href = blobUrl;
+                link2.download = filename;
+                link2.style.display = 'none';
+                document.body.appendChild(link2);
+                link2.click();
+                
+                // Очистка
+                window.URL.revokeObjectURL(blobUrl);
+                document.body.removeChild(link2);
+            } else {
+                const errorData = await response.json();
+                showNotification(errorData.error || 'Ошибка скачивания', 'error');
+            }
+        } catch (error) {
+            console.error('Download error:', error);
+            showNotification('Ошибка скачивания файла', 'error');
+        }
+        
+    } catch (error) {
+        console.error('Download function error:', error);
+        showNotification('Ошибка при попытке скачивания', 'error');
     }
 }
 
@@ -1068,3 +1137,5 @@ async function checkAnswer(taskIndex) {
         }
     }
 }
+
+window.downloadMaterial = downloadMaterial;
